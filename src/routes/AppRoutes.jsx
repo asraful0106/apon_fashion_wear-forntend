@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router';
 import MainLayout from '../layout/MainLayout';
-import HomePage from '../pages/HomePage';
+import HomePage from '../pages/HomePage/HomePage';
 
 const AppRoutes = () => {
     return (

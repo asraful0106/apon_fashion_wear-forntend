@@ -44,7 +44,7 @@ const NavBar = () => {
                         <li>
                             <details>
                                 <summary>Parent</summary>
-                                <ul className="p-2">
+                                <ul className="!mt-[1.1rem] p-2 bg-base-content min-w-[9em] max-w-[15em]">
                                     <li><a>Submenu 1</a></li>
                                     <li><a>Submenu 2</a></li>
                                 </ul>
@@ -58,7 +58,7 @@ const NavBar = () => {
                     <div className="flex items-center justify-center">
                         {/* search bar */}
                         {/* mobile */}
-                        <div className="dropdown">
+                        <div className="dropdown lg:hidden">
                             <div className="m-0 p-0">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
