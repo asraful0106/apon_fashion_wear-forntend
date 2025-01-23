@@ -1,7 +1,7 @@
 const NavBar = () => {
     return (
         <nav>
-            <div className="navbar bg-base-content">
+            <div className="navbar bg-black">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -22,7 +22,7 @@ const NavBar = () => {
                         {/* for mobile */}
                         <ul 
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-content text-white rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                            className="menu menu-sm dropdown-content bg-black text-white rounded-box z-[1] mt-3 w-52 p-2 shadow">
                             <li><a>Item 1</a></li>
                             <li className="">
                                 <a>Parent</a>
@@ -44,7 +44,7 @@ const NavBar = () => {
                         <li>
                             <details>
                                 <summary>Parent</summary>
-                                <ul className="!mt-[1.1rem] p-2 bg-base-content min-w-[9em] max-w-[15em]">
+                                <ul className="!mt-[1.1rem] p-2 bg-black min-w-[9em] max-w-[15em] z-30">
                                     <li><a>Submenu 1</a></li>
                                     <li><a>Submenu 2</a></li>
                                 </ul>
@@ -77,7 +77,7 @@ const NavBar = () => {
                         {/* For dextop */}
                         <div className="navbar-center hidden lg:flex">
                             <div className="form-control">
-                                <input type="text" placeholder="Search" className="input w-24 md:w-auto text-white bg-base-content border-[1px] border-gray-500 focus:border-gray-500" />
+                                <input type="text" placeholder="Search" className="input w-24 md:w-auto text-white bg-black border-[1px] border-gray-500 focus:border-gray-500" />
                             </div>
                         </div>
                         {/* -- */}
@@ -104,7 +104,7 @@ const NavBar = () => {
                             <div
                                 tabIndex={0}
                                 className="card card-compact dropdown-content bg-base-100 z-[1] mt-3 w-52 shadow">
-                                <div className="card-body bg-base-content rounded-box">
+                                <div className="card-body bg-black rounded-box">
                                     <span className="text-white text-lg font-bold">8 Items</span>
                                     <span className="text-info">Subtotal: $999</span>
                                     <div className="card-actions">
@@ -124,7 +124,7 @@ const NavBar = () => {
                             </div>
                             <ul
                                 tabIndex={0}
-                                className="menu menu-sm dropdown-content bg-base-content text-white rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                                className="menu menu-sm dropdown-content bg-black text-white rounded-box z-[1] mt-3 w-52 p-2 shadow">
                                 {/* <li>
                                     <a className="justify-between">
                                         Profile

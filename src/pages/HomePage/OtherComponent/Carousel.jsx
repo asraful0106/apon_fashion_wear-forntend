@@ -34,7 +34,7 @@ const Carousel = ({ images }) => {
                     <img src={image} className="w-full h-full sm:object-fill md:object-cover" />
                     <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
                         <button
-                            className="btn btn-circle bg-[#dedee067] border-none text-white"
+                            className="btn btn-circle btn-ghost"
                             aria-label="Previous slide"
                             onClick={() =>
                                 setCurrentSlide((prev) => (prev - 1 + images.length) % images.length)
@@ -43,7 +43,7 @@ const Carousel = ({ images }) => {
                             ❮
                         </button>
                         <button
-                            className="btn btn-circle bg-[#dedee067] border-none text-white"
+                            className="btn btn-circle btn-ghost"
                             aria-label="Next slide"
                             onClick={() =>
                             {
