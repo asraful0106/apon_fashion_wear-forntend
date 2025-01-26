@@ -221,6 +221,10 @@ const HomePage = () => {
                         }
                     </div>
                 </div>
+                {/* Load More Button */}
+                <div className="flex items-center justify-center mt-6 lg:mt-4">
+                    <button className="py-2 px-4 bg-black rounded text-white hover:bg-[#313131] font-bold text-sm">Load More</button>
+                </div>
             </div>
 
         </div>

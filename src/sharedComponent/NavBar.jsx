@@ -1,3 +1,5 @@
+import { NavLink } from "react-router";
+
 const NavBar = () => {
     return (
         <nav>
@@ -131,8 +133,8 @@ const NavBar = () => {
                                         <span className="badge">New</span>
                                     </a>
                                 </li> */}
-                                <li><a>Login</a></li>
-                                <li><a>Register</a></li>
+                                <li><NavLink to={'/login'}>Login</NavLink></li>
+                                <li><NavLink to={'/register'}>Register</NavLink></li>
                             </ul>
                         </div>
                     </div>
