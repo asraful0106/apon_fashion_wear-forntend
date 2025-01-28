@@ -3,6 +3,7 @@ import MainLayout from '../layout/MainLayout';
 import HomePage from '../pages/HomePage/HomePage';
 import LoginPage from '../pages/LoginPage/LoginPage';
 import RegistrationPage from '../pages/RegistrationPage/RegistrationPage'
+import EachProductPage from '../pages/EachProductPage/EachProductPage';
 
 const AppRoutes = () => {
     return (
@@ -18,6 +19,8 @@ const AppRoutes = () => {
                     <Route path="/login" element={<LoginPage/>} />
                     {/* This route is for the registration page*/}
                     <Route path="/register" element={<RegistrationPage/>}/>
+                    {/* Page For Each Products */}
+                    <Route path="/product/:product_id" element={<EachProductPage/>}/>
                 </Route>
             </Routes>
         </BrowserRouter>
