@@ -2,7 +2,7 @@ import ProductCarasol from "./OthersComponent/ProductCarasol";
 
 const EachProductPage = () => {
     const product = {
-        "id": 101,
+        "id": 110,
         "name": "Interlock Knit Bomber Jacket",
         "description": "<p>Made from super comfortable fabric, this jacket is perfect for effortlessly combining style and comfort. This interlock knit bomber jacket combines comfort with stylish details. Featuring a patch pocket with a flap for added practicality, it also includes ribbed cuffs and hem for a tailored fit. Contrast tipping adds a subtle yet eye-catching accent, while an embroidered logo on the chest enhances its modern appeal.<p/>< li ><ul>nterlock knit bomber jacket<ul /><ul>Patch pocket with flap pocket<ul /><ul>Ribbed detailed at cuff and hem<ul /><ul>Contrast tipping detail<ul /><ul>Embroidered logo on chest<ul /><ul>Super comfortable fabric<ul /><li />",
         "price": 1999.99,
@@ -76,12 +76,20 @@ const EachProductPage = () => {
         ]
     };
 
+    const imagesForCarousel = [
+        "https://d1190btxnvweoc.cloudfront.net/uploads/all/eic1Yc2Ef1FwmpUyq6jzesnqeYERlmGu9hjOGhXD.jpg",
+        "https://d1190btxnvweoc.cloudfront.net/uploads/all/OkNGx6lUZ12HGqH9ZJjgD5HK5EfrJESP7Rpxz2Xb.jpg",
+        "https://d1190btxnvweoc.cloudfront.net/uploads/all/Q6XhtuUom4LTc5oeVu3wsMSWzhJLWElbdIzIkd9h.jpg",
+    ];
+
 
     return (
         <div>
-            <div>
+            <div className="flex flex-col md:flex-row">
                 {/* Product Carasol */}
-                <ProductCarasol/>
+                <div className="mx-0 md:mx-6 my-0 md:my-4">
+                    <ProductCarasol images={imagesForCarousel} />
+                </div>
             </div>
         </div>
     );
