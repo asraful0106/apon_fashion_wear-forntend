@@ -28,7 +28,7 @@ const ProductCarasol = ({ images }) => {
                 {images.map((image, index) => (
                     <div
                         key={index}
-                        className={`carousel-item inset-0 w-full md:w-[50%] h-48 md:h-[30rem] ${index === currentSlide ? "opacity-100 block" : "opacity-0 hidden"
+                        className={`carousel-item inset-0 w-full h-48 md:h-[30rem] ${index === currentSlide ? "opacity-100 block" : "opacity-0 hidden"
                             } transition-opacity duration-500`}
                     >
                         <img
@@ -42,7 +42,7 @@ const ProductCarasol = ({ images }) => {
             </div>
 
             {/* Scrollable Thumbnail Section */}
-            <div className="flex w-full md:w-[50%] justify-center items-center py-2 overflow-hidden">
+            <div className="flex w-full justify-center items-center py-2 overflow-hidden">
                 <div
                     ref={scrollRef}
                     className="flex overflow-x-auto no-scrollbar scroll-smooth px-2"
