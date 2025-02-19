@@ -4,6 +4,7 @@ import HomePage from '../pages/HomePage/HomePage';
 import LoginPage from '../pages/LoginPage/LoginPage';
 import RegistrationPage from '../pages/RegistrationPage/RegistrationPage'
 import EachProductPage from '../pages/EachProductPage/EachProductPage';
+import ErrorPage from '../pages/ErrorPage/ErrorPage';
 
 const AppRoutes = () => {
     return (
@@ -22,6 +23,8 @@ const AppRoutes = () => {
                     {/* Page For Each Products */}
                     <Route path="/product/:product_id" element={<EachProductPage/>}/>
                 </Route>
+                {/* Error page(Not Found Page) */}
+                <Route path='*' element={<ErrorPage/>}/>
             </Routes>
         </BrowserRouter>
     );
