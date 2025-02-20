@@ -179,16 +179,18 @@ const HomePage = () => {
 // *******************************************************
     return (
         <div>
-            {/* Carousel Image Container */}
-            <div className="h-[15rem] md:h-[30rem] overflow-hidden relative">
-                <Carousel images={imagesForCarousel} />
-            </div>
-            {/* Motive Text Container*/}
-            <div className="mt-2">
-                <FlyInOutText /> {/* Fly in out Text Effect */}
+            <div className="w-full relative">
+                {/* Carousel Image Container */}
+                <div className="h-[15rem] md:h-[30rem] overflow-hidden relative">
+                    <Carousel images={imagesForCarousel} />
+                </div>
+                {/* Motive Text Container*/}
+                <div className="mt-2 absolute left-[26%] md:left-[45%] transform translate-x-1/2">
+                    <FlyInOutText /> {/* Fly in out Text Effect */}
+                </div>
             </div>
             {/* Category Section */}
-            <div className="mt-2">
+            <div className="mt-8">
                 {/* horizontal cetagory heading */}
                 <div className="flex items-center gap-4 mb-2">
                     <div className="flex-grow h-[1px] bg-black"></div>
