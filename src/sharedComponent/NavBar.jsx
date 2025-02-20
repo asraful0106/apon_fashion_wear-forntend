@@ -1,6 +1,11 @@
+import { useContext } from "react";
 import { NavLink } from "react-router";
+import categoryContext from "../context/categoryContext/CategoryContext";
 
 const NavBar = () => {
+    // Context API
+    const { categoryData } = useContext(categoryContext);
+
     return (
         <nav>
             <div className="navbar bg-black">
@@ -22,11 +27,38 @@ const NavBar = () => {
                         </div>
                         {/* Nevigation Item */}
                         {/* for mobile */}
-                        <ul 
+                        {/* Mobile Menu */}
+                        <ul
+                            tabIndex={0}
+                            className="menu menu-sm dropdown-content bg-black text-white rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                            {
+                                categoryData?.map(category => (
+                                    category?.sub_category.length === 0 ? (
+                                        <li key={category?.category_id}><a>{category?.category_name}</a></li>
+                                    ) : (
+                                        <li key={category?.category_id}>
+                                            <details>
+                                                <summary>{category?.category_name}</summary>
+                                                <ul className="p-2 border-l-2 rounded-sm border-gray-500">
+                                                    {
+                                                        category?.sub_category?.map(subCategory => (
+                                                            <li key={subCategory?.sub_category_id}>
+                                                                <a>{subCategory?.sub_category_name}</a>
+                                                            </li>
+                                                        ))
+                                                    }
+                                                </ul>
+                                            </details>
+                                        </li>
+                                    )
+                                ))
+                            }
+                        </ul>
+                        {/* <ul 
                             tabIndex={0}
                             className="menu menu-sm dropdown-content bg-black text-white rounded-box z-[1] mt-3 w-52 p-2 shadow">
                             <li><a>Item 1</a></li>
-                            <li className="">
+                            <li>
                                 <a>Parent</a>
                                 <ul className="p-2 border-l-2 rounded-sm border-gray-500">
                                     <li><a>Submenu 1</a></li>
@@ -34,7 +66,7 @@ const NavBar = () => {
                                 </ul>
                             </li>
                             <li><a>Item 3</a></li>
-                        </ul>
+                        </ul> */}
                     </div>
                     {/* Shop Logo */}
                     <a className="btn btn-ghost text-xl text-white">daisyUI</a>
@@ -42,17 +74,26 @@ const NavBar = () => {
                 {/* For dextop */}
                 <div className="navbar-center hidden lg:flex text-white">
                     <ul className="menu menu-horizontal px-1">
-                        <li><a>Item 1</a></li>
-                        <li>
-                            <details>
-                                <summary>Parent</summary>
-                                <ul className="!mt-[1.1rem] p-2 bg-black min-w-[9em] max-w-[15em] z-30">
-                                    <li><a>Submenu 1</a></li>
-                                    <li><a>Submenu 2</a></li>
-                                </ul>
-                            </details>
-                        </li>
-                        <li><a>Item 3</a></li>
+                        {
+                            categoryData?.map(category => (
+                                category?.sub_category.length === 0 ?
+                                    <li key={category?.category_id}><a>{category?.category_name}</a></li>
+                                    :
+                                    <li key={category?.category_id}>
+                                        <details>
+                                            <summary>{category?.category_name}</summary>
+                                            <ul className="!mt-[1.1rem] p-2 bg-black min-w-[9em] max-w-[15em] z-30">
+                                                {
+                                                    category?.sub_category?.map(subCategory => (
+                                                        <li key={subCategory?.sub_category_id}><a>{subCategory?.sub_category_name}</a></li>
+                                                    ))
+                                                }
+                                            </ul>
+                                        </details>
+                                    </li>
+                            ))
+                        }
+
                     </ul>
                 </div>
                 <div className="navbar-end">

@@ -2,12 +2,17 @@ import PropTypes from 'prop-types';
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from 'react';
-// eslint-disable-next-line no-unused-vars
-const Catagory = ({apiLink,imageLink, categoryName}) => {
+
+const Catagory = ({imageLink, categoryName}) => {
+
+    // Getting the link from the .env file
+    const backendSiteLink = import.meta.env.VITE_BACKEND_SITE_LINK;
+    imageLink = `${backendSiteLink}/image/${imageLink}`
     // For AOS animation
     useEffect(() =>{
         Aos.init();
-    }, [])
+    }, []);
+
     return (
         <div data-aos="flip-left" className='hover:cursor-pointer'>
             <div className="card w-24 h-32 md:h-auto md:w-auto shadow-xl mb-2 md:shadow-2xl">
@@ -24,7 +29,6 @@ const Catagory = ({apiLink,imageLink, categoryName}) => {
     );
 };
 Catagory.propTypes = {
-    apiLink: PropTypes.string.isRequired,
     imageLink: PropTypes.string.isRequired,
     categoryName: PropTypes.string.isRequired,
 }
