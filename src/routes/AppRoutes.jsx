@@ -5,6 +5,7 @@ import LoginPage from '../pages/LoginPage/LoginPage';
 import RegistrationPage from '../pages/RegistrationPage/RegistrationPage'
 import EachProductPage from '../pages/EachProductPage/EachProductPage';
 import ErrorPage from '../pages/ErrorPage/ErrorPage';
+import ProfilePage from '../pages/ProfilePage/ProfilePage';
 
 const AppRoutes = () => {
     return (
@@ -22,6 +23,8 @@ const AppRoutes = () => {
                     <Route path="/register" element={<RegistrationPage/>}/>
                     {/* Page For Each Products */}
                     <Route path="/product/:product_id" element={<EachProductPage/>}/>
+                    {/* ******Start of proctected route******* */}
+                    <Route path="/profile" element={<ProfilePage/>} />
                 </Route>
                 {/* Error page(Not Found Page) */}
                 <Route path='*' element={<ErrorPage/>}/>
