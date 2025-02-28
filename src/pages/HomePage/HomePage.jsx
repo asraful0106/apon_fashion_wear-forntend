@@ -4,18 +4,15 @@ import Carousel from "./OtherComponent/Carousel";
 import Catagory from "./OtherComponent/Catagory";
 import FlyInOutText from "./OtherComponent/Fly-in-out-text/FlyInOutText";
 import categoryContext from "../../context/categoryContext/CategoryContext";
+import BannerContext from "../../context/BannerContext/BannerContext";
 
 const HomePage = () => {
     // Context API
     const { categoryData } = useContext(categoryContext);
-    console.log("data: ", categoryData);
+    const { bannerData } = useContext(BannerContext);
+    // console.log("data: ", categoryData);
 
     // *******************Fake data*********************************
-    const imagesForCarousel = [
-        "https://d1190btxnvweoc.cloudfront.net/uploads/all/eic1Yc2Ef1FwmpUyq6jzesnqeYERlmGu9hjOGhXD.jpg",
-        "https://d1190btxnvweoc.cloudfront.net/uploads/all/OkNGx6lUZ12HGqH9ZJjgD5HK5EfrJESP7Rpxz2Xb.jpg",
-        "https://d1190btxnvweoc.cloudfront.net/uploads/all/Q6XhtuUom4LTc5oeVu3wsMSWzhJLWElbdIzIkd9h.jpg",
-    ];
     const product_list = [
         {
             "product_id": 101,
@@ -160,7 +157,7 @@ const HomePage = () => {
             <div className="w-full relative">
                 {/* Carousel Image Container */}
                 <div className="h-[15rem] md:h-[30rem] overflow-hidden relative">
-                    <Carousel images={imagesForCarousel} />
+                    <Carousel images={bannerData} />
                 </div>
                 {/* Motive Text Container*/}
                 <div className="mt-2 absolute left-[26%] md:left-[45%] transform translate-x-1/2">

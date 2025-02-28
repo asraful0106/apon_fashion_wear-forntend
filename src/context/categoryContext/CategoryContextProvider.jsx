@@ -22,11 +22,13 @@ const CategoryContextProvider = ({children}) => {
             setCategoryData(res.data);
             setCategoryLoading(false);
         })
+        // eslint-disable-next-line no-unused-vars
         .catch(err =>{
             setCategoryError("Faild to fetch category");
             setCategoryLoading(false);
-            console.log(err);
+            // console.log(err);
         })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
