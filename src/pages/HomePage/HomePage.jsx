@@ -5,6 +5,7 @@ import Catagory from "./OtherComponent/Catagory";
 import FlyInOutText from "./OtherComponent/Fly-in-out-text/FlyInOutText";
 import categoryContext from "../../context/categoryContext/CategoryContext";
 import BannerContext from "../../context/BannerContext/BannerContext";
+import MetaProvieder from "../../helper/MetaProvieder";
 
 const HomePage = () => {
     // Context API
@@ -154,6 +155,8 @@ const HomePage = () => {
 // *******************************************************
     return (
         <div>
+            {/* For Meta Data */}
+            <MetaProvieder/>
             <div className="w-full relative">
                 {/* Carousel Image Container */}
                 <div className="h-[15rem] md:h-[30rem] overflow-hidden relative">
