@@ -152,11 +152,12 @@ const HomePage = () => {
         }
     ];
 
-// *******************************************************
+    // *******************************************************
     return (
         <div>
             {/* For Meta Data */}
-            <MetaProvieder/>
+            <MetaProvieder />
+            {/* Main Content */}
             <div className="w-full relative">
                 {/* Carousel Image Container */}
                 <div className="h-[15rem] md:h-[30rem] overflow-hidden relative">
@@ -179,7 +180,7 @@ const HomePage = () => {
                 <div className="mt-10 mb-4 mx-4 flex items-center justify-center overflow-hidden">
                     <div className="grid grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-2 lg:gap-y-6">
                         {
-                                categoryData?.map((category) => <Catagory key={category.category_id} imageLink={category.category_image} categoryName={category.category_name} />)
+                            categoryData?.map((category) => <Catagory key={category.category_id} imageLink={category.category_image} categoryName={category.category_name} />)
                         }
 
                     </div>
@@ -197,7 +198,7 @@ const HomePage = () => {
                 <div className="overflow-hidden flex items-center justify-center">
                     <div className="grid grid-cols-2 lg:grid-cols-5 gap-x-2 lg:gap-x-6 gap-y-4">
                         {
-                            product_list.map((product, index) => <ProductCard key={index} name={product.name} price={product.price} original_price={product.original_price} discount_percentage={product.discount_percentage} image = {product.image} rating={product.rating}/>)
+                            product_list.map((product, index) => <ProductCard key={index} name={product.name} price={product.price} original_price={product.original_price} discount_percentage={product.discount_percentage} image={product.image} rating={product.rating} />)
                         }
                     </div>
                 </div>

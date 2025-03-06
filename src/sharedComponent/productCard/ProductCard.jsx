@@ -2,17 +2,20 @@ import PropTypes from 'prop-types';
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from 'react';
+import LazyLoad from 'react-lazyload';
 
 const ProductCard = ({ name, price, original_price, discount_percentage, image, rating }) => {
     // For AOS animation
-    useEffect(() =>{
+    useEffect(() => {
         Aos.init();
     }, [])
     return (
         <div data-aos="zoom-in-down">
             <div className="relative flex w-40 h-72 lg:h-auto xl:w-full xl:max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-xl">
                 <a className="relative mx-3 mt-3 flex h-44 lg:h-60 overflow-hidden rounded-xl" href="#">
-                    <img className="object-cover transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110" src={image} alt="product image" />
+                    <LazyLoad once>
+                        <img className="object-cover transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110" src={image} alt="product image" />
+                    </LazyLoad>
                     <span className="absolute top-0 left-0 m-2 rounded-full bg-black px-1 py-[1px] lg:px-2 text-center text-[10px] lg:text-sm font-medium text-white">{discount_percentage}% OFF</span>
                 </a>
                 <div className="mt-2 xl:mt-4 px-5 lg:pb-5 mb-2 xl:mb-4">
@@ -58,7 +61,7 @@ const ProductCard = ({ name, price, original_price, discount_percentage, image, 
         </div>
     );
 };
-ProductCard.propTypes ={
+ProductCard.propTypes = {
     image: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     price: PropTypes.string.isRequired,

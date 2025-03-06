@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import PropTypes from 'prop-types';
+import LazyLoad from "react-lazyload";
 
 const Carousel = ({ images }) => {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -35,7 +36,9 @@ const Carousel = ({ images }) => {
                     className={`carousel-item absolute inset-0 w-full ${index === currentSlide ? "opacity-100" : "opacity-0"
                         } transition-opacity duration-500`}
                 >
-                    <img src={`${bacekendLink}/image/${image.banner_image}`} className="w-full h-full sm:object-fill md:object-cover" />
+                    <LazyLoad className="w-full h-full" once>
+                         <img src={`${bacekendLink}/image/${image.banner_image}`} className="w-full h-full sm:object-fill md:object-cover" alt="Carousel Image"/>
+                    </LazyLoad>
                     <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
                         <button
                             className="btn btn-circle btn-ghost"
