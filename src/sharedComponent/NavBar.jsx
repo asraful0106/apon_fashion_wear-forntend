@@ -33,7 +33,7 @@ const NavBar = () => {
                             className="menu menu-sm dropdown-content bg-black text-white rounded-box z-[1] mt-3 w-52 p-2 shadow">
                             {
                                 categoryData?.map(category => (
-                                    category?.sub_category.length === 0 ? (
+                                    category?.sub_category?.length === 0 ? (
                                         <li key={category?.category_id}><a>{category?.category_name}</a></li>
                                     ) : (
                                         <li key={category?.category_id}>
@@ -76,7 +76,7 @@ const NavBar = () => {
                     <ul className="menu menu-horizontal px-1">
                         {
                             categoryData?.map(category => (
-                                category?.sub_category.length === 0 ?
+                                category?.sub_category?.length === 0 ?
                                     <li key={category?.category_id}><a>{category?.category_name}</a></li>
                                     :
                                     <li key={category?.category_id}>

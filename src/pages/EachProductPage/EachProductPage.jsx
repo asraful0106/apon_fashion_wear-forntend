@@ -77,11 +77,14 @@ const EachProductPage = () => {
         ]
     };
 
-    const imagesForCarousel = [
-        "https://d1190btxnvweoc.cloudfront.net/uploads/all/eic1Yc2Ef1FwmpUyq6jzesnqeYERlmGu9hjOGhXD.jpg",
-        "https://d1190btxnvweoc.cloudfront.net/uploads/all/OkNGx6lUZ12HGqH9ZJjgD5HK5EfrJESP7Rpxz2Xb.jpg",
-        "https://d1190btxnvweoc.cloudfront.net/uploads/all/Q6XhtuUom4LTc5oeVu3wsMSWzhJLWElbdIzIkd9h.jpg",
-    ];
+    // Images for each product
+    const imagesForCarousel = product?.colors?.map((color) => color?.images?.map((image) => image?.url));
+    // console.log("Image For Carousel: ", imagesForCarousel);
+    // const imagesForCarousel = [
+    //     "https://d1190btxnvweoc.cloudfront.net/uploads/all/eic1Yc2Ef1FwmpUyq6jzesnqeYERlmGu9hjOGhXD.jpg",
+    //     "https://d1190btxnvweoc.cloudfront.net/uploads/all/OkNGx6lUZ12HGqH9ZJjgD5HK5EfrJESP7Rpxz2Xb.jpg",
+    //     "https://d1190btxnvweoc.cloudfront.net/uploads/all/Q6XhtuUom4LTc5oeVu3wsMSWzhJLWElbdIzIkd9h.jpg",
+    // ];
 
 
     return (
@@ -97,7 +100,7 @@ const EachProductPage = () => {
                     {/* Product Name and share button */}
                     <div className="flex items-center justify-between gap-2">
                         <h1 className="text-xl font-bold">
-                            Relaxed Fit Cotton Hoodie with Adjustable Hood
+                            {product?.name}
                         </h1>
                         <div className="flex items-center justify-center gap-[1px] hover:cursor-pointer hover:text-blue-600">
                             <PiShareNetworkThin className="text-2xl" />
@@ -106,13 +109,13 @@ const EachProductPage = () => {
                     </div>
                     <div className="my-2 flex flex-col gap-1">
                         {/* Product Code */}
-                        <p className="text-xs">SKU: MTHODT252 WI24-25</p>
+                        <p className="text-xs">Product Id: {product?.id}</p>
                         {/* Product Category */}
-                        <p className="text-xs">Category: Men Wear</p>
+                        <p className="text-xs">Category: {product?.category}</p>
                     </div>
                     {/* Product Price */}
                     <h1 className="text-xl font-bold mb-6">
-                        Tk 2,695.00
+                        Tk {product?.price}
                     </h1>
                     {/* Product Color Heading*/}
                     <p className="text-sm">Color - CANTON</p>

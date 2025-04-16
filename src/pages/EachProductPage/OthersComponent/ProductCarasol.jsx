@@ -9,6 +9,7 @@ const ProductCarasol = ({ images }) => {
     const activeRef = useRef(null);
 
     // Scroll to active thumbnail when slide changes
+    // console.log("Images: ", images);
     useEffect(() => {
         if (activeRef.current && scrollRef.current) {
             scrollRef.current.scrollTo({
